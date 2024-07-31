@@ -1,0 +1,108 @@
+JavaScript Code Analysis
+
+Constants and Variables
+topScreen: The top section of the calculator screen, showing the ongoing calculations.
+bottomScreen: The bottom section of the calculator screen, displaying the current input or result.
+calculator: The main container of the calculator.
+calculatorInterface: The interface containing all the calculator buttons and screens.
+calculatorScreen: The container for the calculator's screen.
+skull: An image element, likely used for some decorative purpose.
+footer: The footer section of the webpage.
+colors: An array of colors used to change the background color of the title.
+calcValues: An object mapping button IDs to their corresponding values or symbols.
+keyboardSymbols: An object mapping keyboard keys to their corresponding calculator button IDs.
+givenResult: A boolean indicating if the last operation resulted in a calculation.
+resultValue: A string holding the current value to be displayed on the bottom screen.
+colorNum: An index for cycling through colors.
+record: An array to keep track of the ongoing calculations.
+
+Functions
+setUp()
+Prepares the calculator for use:
+
+Adds event listeners for the terms and privacy buttons.
+Updates the footer width and sets an interval to change the title's background color.
+Sets up event listeners for all calculator buttons.
+Links keyboard inputs to calculator functions.
+multiColor(title)
+Changes the background color of the title every 4 seconds.
+
+buttonAction(input)
+Sets up event listeners for calculator buttons. Differentiates between special and normal buttons.
+
+arithmeticSection(total, symbol, number)
+Performs basic arithmetic operations based on the symbol provided.
+
+scientificSection(symbol)
+Handles scientific operations like square root, cube root, factorial, etc.
+
+calculateValues(history)
+Processes the history of values and symbols to compute the result.
+
+wrongInput(number, symbol)
+Checks for invalid inputs, such as dividing by zero or taking the square root of a negative number.
+
+topScreenPrint(total)
+Updates the top screen to show the current calculation process, especially for scientific operations.
+
+screenModification(total)
+Updates both the top and bottom screens with the current calculation result and process.
+
+processValue(sym)
+Processes a given symbol, updates the calculation record, and manages the display.
+
+givenResultCheck(sym)
+Checks if a result has been given. If so, resets the screens and values.
+
+bottomScreenPrint(sym)
+Handles the input of numbers and symbols, updating the bottom screen accordingly.
+
+skullPosition()
+Adjusts the position of the skull image and the width of the calculator based on the length of the input displayed.
+
+keyboardButtons(event)
+Links keyboard inputs to corresponding calculator button actions.
+
+helpSection(event)
+Displays alerts and handles the functionality of the terms and privacy buttons.
+
+Event Listeners
+window.addEventListener('load', setUp, false): Initializes the calculator when the page loads.
+
+
+HTML Document Analysis
+Document Structure
+<head>
+Contains meta information, title, and links to stylesheets and icons.
+
+<meta charset="utf-8">: Sets the character encoding to UTF-8.
+<title>Simple Web Calculator</title>: Sets the title of the webpage.
+<link>: Links to CSS stylesheets and icons.
+<body>
+
+Main content of the webpage.
+<div id="container">: The main container for the content.
+<section id="main">: The main section containing the calculator.
+<header><h1 id="title">Simple Web Calculator</h1></header>: The header with the title.
+<img src="imgs/limit-screen.png" id="skull" draggable="false">: An image element for decorative purposes.
+<div id=calculator>: The calculator container.
+<div id="calculator-interface">: The interface container.
+<div id="calculator-screen">: The screen container.
+<div id="screen-top">: The top screen section.
+<p id="nums-top"></p>: A paragraph element to display ongoing calculations.
+<div id="screen-bottom">: The bottom screen section.
+<p id="nums-bottom">0</p>: A paragraph element to display the current input or result.
+<div id="functional-container">: The container for functional buttons.
+Various buttons for functionalities like negate, pi, euler, factorial, clear, delete, etc.
+<div id="nums-container">: The container for number buttons.
+Buttons for numbers 0-9 and comma.
+<div id="arithmetic-container">: The container for arithmetic operation buttons.
+Buttons for operations like square root, cube root, divide, multiply, subtract, sum, overX, square power, and equal to.
+<footer id="footer">: The footer section.
+<div id="logo-container">: The container for the logo.
+<img src="imgs/calculator_img.png">: An image element for the logo.
+Three <div class="footer-third"> sections**: Each containing links and information about help, more information, and social media follow links.
+<script src="script.js" type="text/javascript"></script>: Includes the JavaScript file for the calculator functionality.
+
+Summary
+The HTML structure is well-organized, with separate sections for the main calculator interface and footer. The JavaScript code provides a robust set of functions to handle calculator operations, button interactions, and display updates. The use of constants, event listeners, and modular functions ensures that the calculator is both functional and maintainable.
